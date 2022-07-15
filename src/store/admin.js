@@ -1,6 +1,6 @@
 import { createAsyncThunk, createReducer } from '@reduxjs/toolkit'
 import axios from 'axios'
-require('dotenv').config({path:'../.env'})
+require('dotenv').config({path:'../../.env'})
 
 export const promoteUserToAdmin = createAsyncThunk('PROMOTE_USER_TO_ADMIN', (id) => {
     return axios.put(`${process.env.CORS_URL}/api/admin/users/${id}`, {admin: true})

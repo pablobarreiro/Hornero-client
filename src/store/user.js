@@ -1,6 +1,6 @@
 import { createAsyncThunk, createReducer } from '@reduxjs/toolkit'
 import axios from 'axios'
-require('dotenv').config({path:'../.env'})
+require('dotenv').config({path:'../../.env'})
 
 export const userRegister = createAsyncThunk("USER_REGISTER", (data) => {
    return axios.post(`${process.env.CORS_URL}/api/users/register`, data)

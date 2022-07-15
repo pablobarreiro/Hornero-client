@@ -1,6 +1,6 @@
 import { createAsyncThunk, createReducer } from '@reduxjs/toolkit'
 import axios from 'axios'
-require('dotenv').config({path:'../.env'})
+require('dotenv').config({path:'../../.env'})
 
 export const getFavorites = createAsyncThunk("GET_FAVORITES", () => {
     const userId = JSON.parse(localStorage.getItem('user')).user._id

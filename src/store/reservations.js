@@ -1,6 +1,6 @@
 import { createAsyncThunk, createReducer } from "@reduxjs/toolkit";
 import axios from "axios";
-require('dotenv').config({path:'../.env'})
+require('dotenv').config({path:'../../.env'})
 
 export const getReservations = createAsyncThunk("GET_RESERVATIONS", (id) => {
   return axios.get(`${process.env.CORS_URL}/api/reservations/office/${id}`).then((res) => res.data);

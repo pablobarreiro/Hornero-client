@@ -1,6 +1,6 @@
 import { createAsyncThunk, createReducer } from "@reduxjs/toolkit";
 import axios from "axios";
-require('dotenv').config({path:'../.env'})
+require('dotenv').config({path:'../../.env'})
 
 export const getOffices = createAsyncThunk("GET_OFFICES", () => {
   return axios.get(`${process.env.CORS_URL}/api/offices`).then((res) => res.data);

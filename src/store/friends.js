@@ -1,6 +1,6 @@
 import { createAsyncThunk, createReducer } from '@reduxjs/toolkit'
 import axios from 'axios'
-require('dotenv').config({path:'../.env'})
+require('dotenv').config({path:'../../.env'})
 
 export const getFriends = createAsyncThunk("GET_FRIENDS", () => {
     const userId = JSON.parse(localStorage.getItem('user')).user._id

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createReducer } from '@reduxjs/toolkit'
 import axios from 'axios'
-require('dotenv').config({path:'../.env'})
+require('dotenv').config({path:'../../.env'})
 
 
 export const getUserReservationsFuturas = createAsyncThunk("GET_USER_RESERVATIONS_FUTURAS", () => {
