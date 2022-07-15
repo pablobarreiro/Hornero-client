@@ -54,7 +54,7 @@ const ImageModal = ({ showModal, setShowModal, setImgUrl }) => {
               <>
                 <img src={image} style={{maxWidth: "100%"}}></img>
                 <button className="main-button m-2" onClick={() => setImage("")}>Tomar otra</button>
-                <button className="main-button m-2" onClick={() => (setImgUrl(image), setShowModal(false))}>Aceptar</button>
+                <button className="main-button m-2" onClick={() => {setImgUrl(image); setShowModal(false)}}>Aceptar</button>
               </>
               :
               <>

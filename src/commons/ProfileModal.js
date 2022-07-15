@@ -36,7 +36,7 @@ const ProfileModal = ({ profile, setProfile }) => {
       </Modal.Header>
       <Modal.Body className={darkMode ? "dark-mode" : "light"} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
         <div style={{ width: "60%", aspectRatio: "1/1", maxWidth: "400px", margin: "0 auto" }}>
-          <img className="profilePhoto" src={profile.imgUrl}></img>
+          <img alt="profile-photo" className="profilePhoto" src={profile.imgUrl}></img>
         </div>
 
         <Card.Body className="w-100">

@@ -1,18 +1,19 @@
 import { createAsyncThunk, createReducer } from "@reduxjs/toolkit";
 import axios from "axios";
+require('dotenv').config({path:'../.env'})
 
 export const getReservations = createAsyncThunk("GET_RESERVATIONS", (id) => {
-  return axios.get(`/api/reservations/office/${id}`).then((res) => res.data);
+  return axios.get(`${process.env.CORS_URL}/api/reservations/office/${id}`).then((res) => res.data);
 });
 
 export const newReservation = createAsyncThunk("NEW_RESERVATION", (reserv) => {
-  return axios.post(`/api/reservations`, reserv);
+  return axios.post(`${process.env.CORS_URL}/api/reservations`, reserv);
 });
 
 export const cancelReservation = createAsyncThunk(
   "CANCEL_RESERVATION",
   (reserveId) => {
-    return axios.delete(`/api/reservations/${reserveId}`);
+    return axios.delete(`${process.env.CORS_URL}/api/reservations/${reserveId}`);
   }
 );
 
@@ -20,7 +21,7 @@ export const getAllFutureReservations = createAsyncThunk(
   "GET_RESERVATIONS",
   (id) => {
     return axios
-      .get(`/api/reservations/office/${id}/date`)
+      .get(`${process.env.CORS_URL}/api/reservations/office/${id}/date`)
       .then((res) => res.data);
   }
 );
@@ -29,7 +30,7 @@ export const getAllPastReservations = createAsyncThunk(
   "GET_RESERVATIONS",
   (id) => {
     return axios
-      .get(`/api/reservations/office/date/${id}`)
+      .get(`${process.env.CORS_URL}/api/reservations/office/date/${id}`)
       .then((res) => res.data);
   }
 );

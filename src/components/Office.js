@@ -17,7 +17,7 @@ import FuturePastModalAdmin from "./FuturePastModalAdmin";
 import { AiFillEdit } from "react-icons/ai";
 import EditOfficeModal from "./EditOfficeModal";
 import MeetingRoomModal from "./MeetingRoomModal";
-import MapSelector from "../images/offices/MapSelector.js";
+import MapSelector from "./MapSelector.js";
 import { getUserReservationsFuturas, getUserReservationsAnteriores } from "../store/userReservations"
 import { selectedFloor } from "../store/selectedFloor";
 import { getReservations, cancelReservation, getAllFutureReservations, getAllPastReservations } from "../store/reservations";
