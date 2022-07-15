@@ -1,0 +1,245 @@
+@font-face {
+  font-family: "heeboregular";
+  src: url("./heeboFont/Heebo-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ESTILOS GENERALES */
+#nav-dropdown {
+  font-family: heeboregular;
+  font-size: large;
+  color: black;
+}
+#white-burger {
+  border-color: #666666 !important;
+  color: #666666 !important;
+}
+
+.main-text {
+  font-family: heeboregular;
+  color: black;
+}
+
+.main-button {
+  font-family: heeboregular;
+  font-size: 14px;
+  font-weight: 700;
+  color: black;
+  background-color: #bfd732;
+  border: none;
+  border-radius: 1000px;
+  padding: 10px 20px;
+  transition: 0.3s;
+}
+
+.main-button:hover {
+  background-color: #a2b82a;
+}
+
+.main-button-black {
+  font-family: heeboregular, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #bfd732;
+  background-color: #444444;
+  border: none;
+  border-radius: 1000px;
+  padding: 10px 20px;
+  transition: 0.3s;
+}
+
+.main-button-black:hover {
+  background-color: #5f5f5f;
+}
+
+.main-input {
+  width: 100%;
+  border-color: #444444;
+  border-width: 1px;
+  border-radius: 1000px;
+  padding: 5px 25px;
+  margin-bottom: 5px;
+}
+select.round {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    radial-gradient(#ddd 70%, transparent 72%);
+  background-position: calc(100% - 20px) calc(15px),
+    calc(100% - 15px) calc(15px), calc(100% - 0.5em) 0.3em;
+  background-size: 5px 5px, 5px 5px, 1.5em 1.5em;
+  background-repeat: no-repeat;
+}
+
+.menu-button {
+  font-family: heeboregular;
+  font-size: 14px;
+  font-weight: 700;
+  color: #444444;
+  border: none;
+  padding: 5px;
+}
+
+/* ESTILOS PARA MAPAS */
+.fil0 {
+  fill: #63E3CF;
+}
+.map-dark {
+  fill: #63E3CF;
+}
+.reserved {
+  fill: #888888;
+}
+
+.contsvg {
+  margin: auto;
+  width: 80%;
+  border-style: solid;
+  border-radius: 3%;
+  border-width: 1px;
+}
+
+.fc-button-primary {
+  font-family: heeboregular !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: black !important;
+  background-color: #bfd732 !important;
+  border: none !important;
+  border-radius: 1000px !important;
+  padding: 5% 10% !important;
+  transition: 0.3s !important;
+}
+
+.input-form {
+  width: 90%;
+  border-color: #444444;
+  border-radius: 10px;
+  padding: 5px 5px;
+}
+
+.select-form {
+  width: 90%;
+  border-color: #444444;
+  border-radius: 10px;
+  padding: 5px 5px;
+  background-color: white;
+}
+
+/* ESTILOS PARA DARK MODE */
+#dark-burger {
+  border-color: white !important;
+  color: white !important;
+}
+
+.dark-mode {
+  background-color: #444444 !important;
+  color: white !important;
+  border-color: #666666 !important;
+}
+
+.dark-mode-input {
+  width: 100%;
+  color: white;
+  border-color: #666666;
+  background-color: #999999;
+  border-width: 0px;
+  border-radius: 1000px;
+  padding: 5px 25px;
+  margin-bottom: 5px;
+}
+
+.dark-mode-textarea {
+  color: #333333;
+  border-color: #666666;
+  background-color: #aaaaaa;
+  border-radius: 6px;
+}
+
+.dark-mode-black-button {
+  font-family: heeboregular, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #bfd732;
+  background-color: #666666;
+  border: none;
+  border-radius: 1000px;
+  padding: 10px 20px;
+  transition: 0.3s;
+}
+
+.dark-mode-black-button:hover {
+  background-color: #777777;
+}
+
+#dark-nav-dropdown {
+  font-family: heeboregular;
+  font-size: large;
+  color: white;
+}
+
+#dropdown-basic {
+ font-family: heeboregular;
+  font-size: 14px;
+  font-weight: 700;
+  color: black;
+  background-color: #bfd732;
+  border: none;
+  border-radius: 1000px;
+}
+
+.profilePhoto{
+width: 100%; 
+height: 100%; 
+border-radius: 50%; 
+border-width: 3px; 
+border-color: #8a8888; 
+border-style: solid; 
+object-fit: cover
+}
+
+.groupedButton {
+  text-align: center;
+  font-family: heeboregular;
+  font-size: 14px;
+  font-weight: 700;
+  color: black;
+  background-color: #bfd732;
+  border: solid 1px;
+  padding: 10px;
+  margin-top: 3px;
+  transition: 0.3s;
+  max-width: 16%;
+}
+
+.groupedButton:hover{
+background-color: #6a7a10;
+}
+
+.groupedButtonReserved {
+  text-align: center;
+  font-family: heeboregular;
+  font-size: 14px;
+  font-weight: 700;
+  color: black;
+  background-color: #888888;
+  border: solid 1px;
+  padding: 10px;
+  margin-top: 2px;
+  transition: 0.3s;
+  max-width: 16%;
+}
+
+.groupedButtonReserved:hover{
+  background-color: #434141;
+}
+
+.map-container{
+background-color: #444444;
+}
+
+.navbar-collapse{
+background-color: white !important
+}
