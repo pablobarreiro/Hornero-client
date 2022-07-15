@@ -23,7 +23,6 @@ import { selectedFloor } from '../store/selectedFloor';
 import favouriteDeleter from "../hooks/favouriteDeleter"
 
 const NavigationBar = () => {
-
   const [checked, setChecked] = useState(false);
 
   const [showFriends, setShowFriends] = useState(false);

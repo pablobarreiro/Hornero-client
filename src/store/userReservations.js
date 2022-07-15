@@ -4,13 +4,13 @@ import axios from 'axios'
 
 export const getUserReservationsFuturas = createAsyncThunk("GET_USER_RESERVATIONS_FUTURAS", () => {
     const userId = JSON.parse(localStorage.getItem('user')).user._id
-    return axios.get(`${process.env.REACT_APP_CORS_URL}/api/reservations/users/date/${userId}/`)
+    return axios.get(`${process.env.REACT_APP_CORS_URL}api/reservations/users/date/${userId}/`)
         .then(res => res.data)
 })
 
 export const getUserReservationsAnteriores = createAsyncThunk("GET_USER_RESERVATIONS_ANTERIORES", () => {
     const userId = JSON.parse(localStorage.getItem('user')).user._id
-    return axios.get(`${process.env.REACT_APP_CORS_URL}/api/reservations/users/${userId}/date`)
+    return axios.get(`${process.env.REACT_APP_CORS_URL}api/reservations/users/${userId}/date`)
         .then(res => res.data)
 })
 
