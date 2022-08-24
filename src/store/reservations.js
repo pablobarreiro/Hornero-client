@@ -1,18 +1,21 @@
 import { createAsyncThunk, createReducer } from "@reduxjs/toolkit";
 import axios from "axios";
+import { prependBaseUri } from "../baseUri";
 
 export const getReservations = createAsyncThunk("GET_RESERVATIONS", (id) => {
-  return axios.get(`${process.env.REACT_APP_CORS_URL}api/reservations/office/${id}`).then((res) => res.data);
+  return axios
+    .get(prependBaseUri(`api/reservations/office/${id}`))
+    .then((res) => res.data);
 });
 
 export const newReservation = createAsyncThunk("NEW_RESERVATION", (reserv) => {
-  return axios.post(`${process.env.REACT_APP_CORS_URL}api/reservations`, reserv);
+  return axios.post(prependBaseUri(`api/reservations`), reserv);
 });
 
 export const cancelReservation = createAsyncThunk(
   "CANCEL_RESERVATION",
   (reserveId) => {
-    return axios.delete(`${process.env.REACT_APP_CORS_URL}api/reservations/${reserveId}`);
+    return axios.delete(prependBaseUri(`api/reservations/${reserveId}`));
   }
 );
 
@@ -20,7 +23,7 @@ export const getAllFutureReservations = createAsyncThunk(
   "GET_RESERVATIONS",
   (id) => {
     return axios
-      .get(`${process.env.REACT_APP_CORS_URL}api/reservations/office/${id}/date`)
+      .get(prependBaseUri(`api/reservations/office/${id}/date`))
       .then((res) => res.data);
   }
 );
@@ -29,7 +32,7 @@ export const getAllPastReservations = createAsyncThunk(
   "GET_RESERVATIONS",
   (id) => {
     return axios
-      .get(`${process.env.REACT_APP_CORS_URL}api/reservations/office/date/${id}`)
+      .get(prependBaseUri(`api/reservations/office/date/${id}`))
       .then((res) => res.data);
   }
 );

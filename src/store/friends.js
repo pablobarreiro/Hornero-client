@@ -1,35 +1,48 @@
-import { createAsyncThunk, createReducer } from '@reduxjs/toolkit'
-import axios from 'axios'
+import { createAsyncThunk, createReducer } from "@reduxjs/toolkit";
+import axios from "axios";
+import { prependBaseUri } from "../baseUri";
 
 export const getFriends = createAsyncThunk("GET_FRIENDS", () => {
-    const userId = JSON.parse(localStorage.getItem('user')).user._id
-    return axios.get(`${process.env.REACT_APP_CORS_URL}api/friends/${userId}`)
-        .then(res => res.data)
-})
+  const userId = JSON.parse(localStorage.getItem("user")).user._id;
+  return axios
+    .get(prependBaseUri(`api/friends/${userId}`))
+    .then((res) => res.data);
+});
 
 export const addFriend = createAsyncThunk("ADD_FRIEND", (userIdToAdd) => {
-    const userId = JSON.parse(localStorage.getItem('user')).user._id
-    return axios.post(`${process.env.REACT_APP_CORS_URL}api/friends/add/${userId}/${userIdToAdd}`)
-})
+  const userId = JSON.parse(localStorage.getItem("user")).user._id;
+  return axios.post(prependBaseUri(`api/friends/add/${userId}/${userIdToAdd}`));
+});
 
-export const removeFriend = createAsyncThunk("REMOVE_FRIEND", (userIdToDelete) => {
-    const userId = JSON.parse(localStorage.getItem('user')).user._id
-    return axios.delete(`${process.env.REACT_APP_CORS_URL}api/friends/remove/${userId}/${userIdToDelete}`)
-})
+export const removeFriend = createAsyncThunk(
+  "REMOVE_FRIEND",
+  (userIdToDelete) => {
+    const userId = JSON.parse(localStorage.getItem("user")).user._id;
+    return axios.delete(
+      prependBaseUri(`api/friends/remove/${userId}/${userIdToDelete}`)
+    );
+  }
+);
 
-export const sendMailToFriend = createAsyncThunk("SEND_MAIL_TO_FRIEND", (mailData) => {
+export const sendMailToFriend = createAsyncThunk(
+  "SEND_MAIL_TO_FRIEND",
+  (mailData) => {
     // mailData = {mailFrom:'Nombre Apellido', mailTo: 'destinatario@globant.com', mailBody:'cuerpo del mail'}
-    return axios.post(`${process.env.REACT_APP_CORS_URL}api/friends/sendMail`, mailData)
-})
+    return axios.post(prependBaseUri(`api/friends/sendMail`), mailData);
+  }
+);
 
-export const searchFriends = createAsyncThunk("SEARCH_FRIENDS", (searchInput) => {
-    return axios.get(`${process.env.REACT_APP_CORS_URL}api/friends/search/${searchInput}`)
-        .then(user => user.data)
-}) 
-
+export const searchFriends = createAsyncThunk(
+  "SEARCH_FRIENDS",
+  (searchInput) => {
+    return axios
+      .get(prependBaseUri(`api/friends/search/${searchInput}`))
+      .then((user) => user.data);
+  }
+);
 
 const friendsReducer = createReducer([], {
-    [getFriends.fulfilled]: (state, action) => action.payload,
+  [getFriends.fulfilled]: (state, action) => action.payload,
 });
 
 export default friendsReducer;
